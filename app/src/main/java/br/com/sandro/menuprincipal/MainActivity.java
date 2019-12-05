@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         listaJogos.add(new Jogos("Super Mario World", "Jogos", "", "• Plataforma  • Ação", "Nintendo Co., Ltd.", R.mipmap.supermario_logo, R.mipmap.supermario_logo, 5, R.mipmap.favorito_icon_foreground));
         listaJogos.add(new Jogos("Grand Theft Auto V", "Jogos", "", "• Ação  • Aventura", "Rockstar North.", R.mipmap.gta5_logo, R.mipmap.gta5_logo, 5, R.mipmap.favorito_icon_foreground));
         listaJogos.add(new Jogos("The last of us", "Jogos", "", "• Ação  • Aventura  • Sobrevivência", "Konami", R.mipmap.tlou_logo, R.mipmap.tlou_logo, 3, R.mipmap.nao_favorito_icon_foreground));
+        listaJogos.add(new Jogos("Far Cry 5", "Jogos", "", "• FPS  • Ação", "Ubisoft", R.mipmap.farcry5_logo, R.mipmap.farcry5_logo, 5, R.mipmap.favorito_icon_foreground));
 
         RecyclerView mrcv = findViewById(R.id.recyclerview_id);
         ListaJogos myAdapter = new ListaJogos(this, listaJogos);
