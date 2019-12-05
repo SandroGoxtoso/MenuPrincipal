@@ -17,7 +17,7 @@
             android:layout_height="240dp">
 
             <ImageView
-                android:id="@+id/image"
+                android:id="@+id/imagem_jogo"
                 android:layout_width="match_parent"
                 android:layout_height="145dp"
                 android:layout_alignParentTop="true"
@@ -29,10 +29,10 @@
                 android:scaleType="centerCrop" />
 
             <TextView
-                android:id="@+id/title"
+                android:id="@+id/titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/image"
+                android:layout_below="@id/imagem_jogo"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="5dp"
                 android:text="Brochure"
@@ -40,10 +40,10 @@
                 android:textSize="14dp" />
 
             <TextView
-                android:id="@+id/desc"
+                android:id="@+id/descricao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/title"
+                android:layout_below="@id/titulo"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="3dp"
                 android:layout_marginRight="16dp"

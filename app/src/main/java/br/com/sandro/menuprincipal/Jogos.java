@@ -3,17 +3,21 @@ package br.com.sandro.menuprincipal;
 public class Jogos {
 
     private String Titulo, Categoria, Descricao, Genero, Desenvolvedora;
-    private int ImagemPequena, ImagemGrande, JogoFavorito, Avaliacao;
+    private int ImagemPequenaTP, ImagemGrandeTP, JogoFavorito, Avaliacao;
 
     public Jogos() {
     }
 
-    public Jogos(String titulo, String categoria, String descricao, String genero, String desenvolvedora, int imagemPequena, int imagemGrande, int avaliacao, int jogoFavorito) {
+    // Define o construtor da classe passando como parametro os dados do jogo
+    // TP = Tela Principal
+    // TDJ = Tela Detalhes Jogos
+
+    public Jogos(String titulo, String categoria, String descricao, String genero, String desenvolvedora, int img_pequena_TP, int img_grande_TP, int avaliacao, int jogoFavorito) {
         Titulo = titulo;
         Categoria = categoria;
         Descricao = descricao;
-        ImagemPequena = imagemPequena;
-        ImagemGrande = imagemGrande;
+        ImagemPequenaTP = img_pequena_TP;
+        ImagemGrandeTP = img_grande_TP;
         JogoFavorito = jogoFavorito;
         Genero = genero;
         Desenvolvedora = desenvolvedora;
@@ -60,20 +64,20 @@ public class Jogos {
         Desenvolvedora = desenvolvedora;
     }
 
-    public int getImagemPequena() {
-        return ImagemPequena;
+    public int getImagem_Pequena_TP() {
+        return ImagemPequenaTP;
     }
 
-    public void setImagemPequena(int imagemPequena) {
-        ImagemPequena = imagemPequena;
+    public void setImagem_Pequena_TP(int imagem_Pequena_TP) {
+        ImagemPequenaTP = imagem_Pequena_TP;
     }
 
-    public int getImagemGrande() {
-        return ImagemGrande;
+    public int getImagemGrandeTP() {
+        return ImagemGrandeTP;
     }
 
-    public void setImagemGrande(int imagemGrande) {
-        ImagemGrande = imagemGrande;
+    public void setImagemGrandeTP(int imagemGrandeTP) {
+        ImagemGrandeTP = imagemGrandeTP;
     }
 
     public int getAvaliacao() {

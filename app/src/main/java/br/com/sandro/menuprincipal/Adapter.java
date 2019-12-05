@@ -38,16 +38,16 @@ public class Adapter extends PagerAdapter {
         layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.item, container, false);
 
-        ImageView imageView;
-        TextView title, desc;
+        ImageView imagem_jogo;
+        TextView titulo, descricao;
 
-        imageView = view.findViewById(R.id.image);
-        title = view.findViewById(R.id.title);
-        desc = view.findViewById(R.id.desc);
+        imagem_jogo = view.findViewById(R.id.imagem_jogo);
+        titulo = view.findViewById(R.id.titulo);
+        descricao = view.findViewById(R.id.descricao);
 
-        imageView.setImageResource(models.get(position).getImage());
-        title.setText(models.get(position).getTitle());
-        desc.setText(models.get(position).getDesc());
+        imagem_jogo.setImageResource(models.get(position).getImage());
+        titulo.setText(models.get(position).getTitle());
+        descricao.setText(models.get(position).getDesc());
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override

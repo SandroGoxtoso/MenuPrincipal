@@ -11,7 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class TelaPrincipal extends AppCompatActivity {
 
     List<Jogos> listaJogos;
     List<Model> models;
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         listaJogos.add(new Jogos("The last of us", "Jogos", "", "• Ação  • Aventura  • Sobrevivência", "Konami", R.mipmap.tlou_logo, R.mipmap.tlou_logo, 3, R.mipmap.nao_favorito_icon_foreground));
         listaJogos.add(new Jogos("Far Cry 5", "Jogos", "", "• FPS  • Ação", "Ubisoft", R.mipmap.farcry5_logo, R.mipmap.farcry5_logo, 5, R.mipmap.favorito_icon_foreground));
 
-        RecyclerView mrcv = findViewById(R.id.recyclerview_id);
+        RecyclerView mrcv = findViewById(R.id.rcv_principal);
         ListaJogos myAdapter = new ListaJogos(this, listaJogos);
 
         /*

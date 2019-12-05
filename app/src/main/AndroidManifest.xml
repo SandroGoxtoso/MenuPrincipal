@@ -8,12 +8,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="br.com.sandro.menuprincipal.MainActivity">
+        <activity android:name="br.com.sandro.menuprincipal.TelaPrincipal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="br.com.sandro.menuprincipal.JogosActivity"></activity>
+        <activity android:name="br.com.sandro.menuprincipal.DetalhesJogos"></activity>
     </application>
 </manifest>

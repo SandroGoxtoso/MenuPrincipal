@@ -7,7 +7,7 @@
     android:background="#F7F7F7"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context="br.com.sandro.menuprincipal.MainActivity">
+    tools:context="br.com.sandro.menuprincipal.TelaPrincipal">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -168,7 +168,7 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_id"
+            android:id="@+id/rcv_principal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingTop="6dp"

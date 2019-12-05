@@ -27,7 +27,6 @@ public class ListaJogos extends RecyclerView.Adapter<ListaJogos.MyViewHolder> {
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         View view;
         LayoutInflater mInflater = LayoutInflater.from(context);
         view = mInflater.inflate(R.layout.lista_jogos, parent, false);
@@ -40,19 +39,20 @@ public class ListaJogos extends RecyclerView.Adapter<ListaJogos.MyViewHolder> {
         holder.tv_titulo.setText(listaJogos.get(position).getTitulo());
         holder.tv_desenvolvedora.setText(listaJogos.get(position).getDesenvolvedora());
         holder.tv_genero.setText(listaJogos.get(position).getGenero());
-        holder.img_pequena.setImageResource(listaJogos.get(position).getImagemPequena());
-        holder.img_grande.setImageResource(listaJogos.get(position).getImagemGrande());
+        holder.img_pequena.setImageResource(listaJogos.get(position).getImagem_Pequena_TP());
+        holder.img_grande.setImageResource(listaJogos.get(position).getImagemGrandeTP());
         holder.rb_avaliacao.setRating(listaJogos.get(position).getAvaliacao());
         holder.img_favorito.setImageResource(listaJogos.get(position).getJogoFavorito());
         holder.card_jogos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, JogosActivity.class);
+                Intent intent = new Intent(context, DetalhesJogos.class);
                 // Passando dados para a activity "Jogos Activity"
+                // Passa os valores pela chave no intent.putExtra
                 intent.putExtra("Titulo", listaJogos.get(position).getTitulo());
                 intent.putExtra("Descricao", listaJogos.get(position).getDescricao());
-                intent.putExtra("ImagemPequena", listaJogos.get(position).getImagemPequena());
-                intent.putExtra("ImagemGrande", listaJogos.get(position).getImagemGrande());
+                intent.putExtra("ImagemPequena", listaJogos.get(position).getImagem_Pequena_TP());
+                intent.putExtra("ImagemGrande", listaJogos.get(position).getImagemGrandeTP());
                 intent.putExtra("Desenvolvedora", listaJogos.get(position).getDesenvolvedora());
                 intent.putExtra("Genero", listaJogos.get(position).getGenero());
                 intent.putExtra("Avaliacao", listaJogos.get(position).getAvaliacao());
@@ -67,7 +67,7 @@ public class ListaJogos extends RecyclerView.Adapter<ListaJogos.MyViewHolder> {
     public int getItemCount() {
         return listaJogos.size();
     }
-
+    // Ao extender a classe asbtrata RecyclerView.ViewHolder é nescessário implementar seu método abstrato MyViewHolder
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tv_titulo;
         TextView tv_desenvolvedora;
@@ -77,9 +77,10 @@ public class ListaJogos extends RecyclerView.Adapter<ListaJogos.MyViewHolder> {
         CardView card_jogos;
         ImageView img_favorito;
 
+        // Método da classe abstrata ViewHolder
         public MyViewHolder(View itemView) {
             super(itemView);
-            // Atribui os valores das views
+            // Atribuição
             tv_titulo = itemView.findViewById(R.id.tv_titulo);
             tv_desenvolvedora = itemView.findViewById(R.id.tv_desenvolvedora);
             tv_genero = itemView.findViewById(R.id.tv_genero);
