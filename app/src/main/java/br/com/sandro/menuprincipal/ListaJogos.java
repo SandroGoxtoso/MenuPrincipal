@@ -39,7 +39,7 @@ public class ListaJogos extends RecyclerView.Adapter<ListaJogos.MyViewHolder> {
         holder.tv_titulo.setText(listaJogos.get(position).getTitulo());
         holder.tv_desenvolvedora.setText(listaJogos.get(position).getDesenvolvedora());
         holder.tv_genero.setText(listaJogos.get(position).getGenero());
-        holder.img_pequena.setImageResource(listaJogos.get(position).getImagem_Pequena_TP());
+        holder.img_pequena.setImageResource(listaJogos.get(position).getImagemPequenaTP());
         holder.img_grande.setImageResource(listaJogos.get(position).getImagemGrandeTP());
         holder.rb_avaliacao.setRating(listaJogos.get(position).getAvaliacao());
         holder.img_favorito.setImageResource(listaJogos.get(position).getJogoFavorito());
@@ -48,15 +48,25 @@ public class ListaJogos extends RecyclerView.Adapter<ListaJogos.MyViewHolder> {
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetalhesJogos.class);
                 // Passando dados para a activity "Jogos Activity"
-                // Passa os valores pela chave no intent.putExtra
+                // Passa os valores no intent.putExtra
+
+                // Salva os valores das intentes por indice na Tela Principal
                 intent.putExtra("Titulo", listaJogos.get(position).getTitulo());
                 intent.putExtra("Descricao", listaJogos.get(position).getDescricao());
-                intent.putExtra("ImagemPequena", listaJogos.get(position).getImagem_Pequena_TP());
-                intent.putExtra("ImagemGrande", listaJogos.get(position).getImagemGrandeTP());
                 intent.putExtra("Desenvolvedora", listaJogos.get(position).getDesenvolvedora());
                 intent.putExtra("Genero", listaJogos.get(position).getGenero());
                 intent.putExtra("Avaliacao", listaJogos.get(position).getAvaliacao());
                 intent.putExtra("JogoFavorito", listaJogos.get(position).getJogoFavorito());
+                intent.putExtra("ImagemPequenaTP", listaJogos.get(position).getImagemPequenaTP());
+                intent.putExtra("ImagemGrandeTP", listaJogos.get(position).getImagemGrandeTP());
+                // Salva os valores das intentes por indice na Tela Detalhes Jogos
+                intent.putExtra("ImagemPequena1TDJ", listaJogos.get(position).getImagemPequena1TDJ());
+                intent.putExtra("ImagemPequena2TDJ", listaJogos.get(position).getImagemPequena2TDJ());
+                intent.putExtra("ImagemPequena3TDJ", listaJogos.get(position).getImagemPequena3TDJ());
+                intent.putExtra("ImagemPequena4TDJ", listaJogos.get(position).getImagemPequena4TDJ());
+                intent.putExtra("ImagemPequena5TDJ", listaJogos.get(position).getImagemPequena5TDJ());
+                intent.putExtra("ImagemGrandeTDJ", listaJogos.get(position).getImagemGrandeTDJ());
+
                 // Inicia a activity
                 context.startActivity(intent);
             }
@@ -67,6 +77,7 @@ public class ListaJogos extends RecyclerView.Adapter<ListaJogos.MyViewHolder> {
     public int getItemCount() {
         return listaJogos.size();
     }
+
     // Ao extender a classe asbtrata RecyclerView.ViewHolder é nescessário implementar seu método abstrato MyViewHolder
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tv_titulo;
