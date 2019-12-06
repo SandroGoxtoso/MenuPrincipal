@@ -3,7 +3,7 @@ package br.com.sandro.menuprincipal;
 public class Jogos {
 
     private String Titulo, Categoria, Descricao, Genero, Desenvolvedora;
-    private int ImagemPequenaTP, ImagemGrandeTP, JogoFavorito, Avaliacao;
+    private int ImagemPequenaTP, ImagemGrandeTP, JogoFavorito, Avaliacao, MinValor, MaxValor;
     private int ImagemPequena1TDJ, ImagemPequena2TDJ, ImagemPequena3TDJ, ImagemPequena4TDJ, ImagemPequena5TDJ, ImagemGrandeTDJ;
 
     public Jogos() {
@@ -13,7 +13,7 @@ public class Jogos {
     // TP = Indicador Tela Principal
     // TDJ = Indicador Tela Detalhes Jogos
 
-    public Jogos(String titulo, String categoria, String descricao, String genero, String desenvolvedora, int img_pequena_TP, int img_grande_TP, int avaliacao, int jogoFavorito, int img_pequena_1_TDJ, int img_pequena_2_TDJ, int img_pequena_3_TDJ, int img_pequena_4_TDJ, int img_pequena_5_TDJ, int img_grande_TDJ) {
+    public Jogos(String titulo, String categoria, String descricao, String genero, String desenvolvedora, int img_pequena_TP, int img_grande_TP, int avaliacao, int minValor, int maxValor, int jogoFavorito, int img_pequena_1_TDJ, int img_pequena_2_TDJ, int img_pequena_3_TDJ, int img_pequena_4_TDJ, int img_pequena_5_TDJ, int img_grande_TDJ) {
         // Tela Principal
         Titulo = titulo;
         Categoria = categoria;
@@ -24,6 +24,8 @@ public class Jogos {
         Genero = genero;
         Desenvolvedora = desenvolvedora;
         Avaliacao = avaliacao;
+        MinValor = minValor;
+        MaxValor = maxValor;
         // Tela Detalhes Jogos
         ImagemPequena1TDJ = img_pequena_1_TDJ;
         ImagemPequena2TDJ = img_pequena_2_TDJ;
@@ -55,6 +57,22 @@ public class Jogos {
 
     public void setImagemPequena3TDJ(int imagemPequena3TDJ) {
         ImagemPequena3TDJ = imagemPequena3TDJ;
+    }
+
+    public int getMinValor() {
+        return MinValor;
+    }
+
+    public void setMinValor(int minValor) {
+        MinValor = minValor;
+    }
+
+    public int getMaxValor() {
+        return MaxValor;
+    }
+
+    public void setMaxValor(int maxValor) {
+        MaxValor = maxValor;
     }
 
     public int getImagemPequena4TDJ() {

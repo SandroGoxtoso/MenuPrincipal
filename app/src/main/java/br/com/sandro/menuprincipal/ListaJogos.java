@@ -60,6 +60,8 @@ public class ListaJogos extends RecyclerView.Adapter<ListaJogos.MyViewHolder> {
                 intent.putExtra("ImagemPequenaTP", listaJogos.get(position).getImagemPequenaTP());
                 intent.putExtra("ImagemGrandeTP", listaJogos.get(position).getImagemGrandeTP());
                 // Salva os valores das intentes por indice na Tela Detalhes Jogos
+                intent.putExtra("MinValor", listaJogos.get(position).getMinValor());
+                intent.putExtra("MaxValor", listaJogos.get(position).getMaxValor());
                 intent.putExtra("ImagemPequena1TDJ", listaJogos.get(position).getImagemPequena1TDJ());
                 intent.putExtra("ImagemPequena2TDJ", listaJogos.get(position).getImagemPequena2TDJ());
                 intent.putExtra("ImagemPequena3TDJ", listaJogos.get(position).getImagemPequena3TDJ());
