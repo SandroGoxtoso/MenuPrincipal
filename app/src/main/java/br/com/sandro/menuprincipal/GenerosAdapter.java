@@ -13,9 +13,24 @@ import java.util.List;
 
 public class GenerosAdapter extends PagerAdapter {
 
+    /**
+     * @NonNull Indica que um valor de retorno de parâmetro, campo ou método nunca pode ser nulo.
+     */
+
     private List<Generos> generos;
     private LayoutInflater layoutInflater;
     private Context context;
+
+    /**
+     * Adaptador para os generos
+     * <p>
+     * Para exibir os generos na tela principal foi nescessário desenvolver esse Adaptador pois ele
+     * permite vincular uma lista de objetos do tipo generos
+     *
+     * @param generos Será nescessário definir uma lista que terá como objetos a classe Generos
+     * @param context Define o contexto da view
+     * @Author Sandro Diego Adão
+     */
 
     public GenerosAdapter(List<Generos> generos, Context context) {
         this.generos = generos;

@@ -13,6 +13,22 @@ import java.util.List;
 
 public class TelaPrincipal extends AppCompatActivity {
 
+    /**
+     * Classe tela principal aonde será exibida todas as informações dos jogos
+     * <p>
+     * Classe aonde serão definidos as listas, ViewsPagers e Adapters.
+     * para listar um jogo na lista de jogos utilize os método abaixo:
+     * Adicionar um jogo na lista jogos <code>listaJogos.add(new Jogos(String titulo, String categoria, String descricao, String genero, String desenvolvedora, int img_pequena_TP, int img_grande_TP, int avaliacao, int minValor, int maxValor, int jogoFavorito, int img_pequena_1_TDJ, int img_pequena_2_TDJ, int img_pequena_3_TDJ, int img_pequena_4_TDJ, int img_pequena_5_TDJ, int img_grande_TDJ));</code>
+     *
+     * Para listar um jogo na lista destaque utilize os método abaixo:
+     * Adicionar um jogo na lista destaque <code>destaqueJogos.add(new DestaqueJogos(int imagem, String titulo, String descricao));</code>
+     *
+     * Para listar um genero novo na lista utilize o método abaixo:
+     * Adicionar um genêro na lista generos <code>generos.add(new Generos(String genero));</code>
+     *
+     * @Author Sandro Diego Adão
+     */
+
     List<Jogos> listaJogos;
     List<DestaqueJogos> destaqueJogos;
     List<Generos> generos;
@@ -29,6 +45,7 @@ public class TelaPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
+        // Cria uma ArrayList do tipo Generos
         generos = new ArrayList<>();
         generos.add(new Generos("RPG"));
         generos.add(new Generos("Ação"));

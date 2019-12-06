@@ -9,9 +9,31 @@ public class Jogos {
     public Jogos() {
     }
 
-    // Define o construtor da classe passando como parâmetro os dados do jogo
-    // TP = Indicador Tela Principal
-    // TDJ = Indicador Tela Detalhes Jogos
+    /**
+     * Classe utilizada para exibir jogos
+     * <p>
+     * Esta classe passa como parâmetros as informações nescessária para exibir o jogo no card da tela principal
+     * Indicadores: TP = Tela Principal, TDJ = Tela Detalhes Jogos.
+     *
+     * @param titulo
+     * @param categoria
+     * @param descricao
+     * @param genero
+     * @param desenvolvedora
+     * @param img_pequena_TP
+     * @param img_grande_TP
+     * @param avaliacao
+     * @param minValor
+     * @param maxValor
+     * @param jogoFavorito
+     * @param img_pequena_1_TDJ
+     * @param img_pequena_2_TDJ
+     * @param img_pequena_3_TDJ
+     * @param img_pequena_4_TDJ
+     * @param img_pequena_5_TDJ
+     * @param img_grande_TDJ
+     * @Author Sandro Diego Adão
+     */
 
     public Jogos(String titulo, String categoria, String descricao, String genero, String desenvolvedora, int img_pequena_TP, int img_grande_TP, int avaliacao, int minValor, int maxValor, int jogoFavorito, int img_pequena_1_TDJ, int img_pequena_2_TDJ, int img_pequena_3_TDJ, int img_pequena_4_TDJ, int img_pequena_5_TDJ, int img_grande_TDJ) {
         // Tela Principal

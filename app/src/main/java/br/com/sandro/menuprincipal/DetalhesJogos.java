@@ -10,6 +10,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DetalhesJogos extends AppCompatActivity {
 
+    /**
+     * Classe aonde contem as informações dos jogos
+     * <p>
+     * Esta classe é utilizada como classe Adaptadora aonde serão coletadas as informações dos jogos
+     * e atribuidas em itents para poder ser utilizadas em outras classes, para criar uma nova informação
+     * defina uma variavel, instancia o objeto da view nela e utilize o a sintaxe abaixo:
+     * <p>
+     * Defina uma variável: <code>nome_da_variavel = findViewById(R.id.id_view);</code>
+     * Defina uma nova chave: <code>tipo_da_variavel nome_da_variavel = intent.getExtras().getTipo_Da_Variavel("Nome_Da_Chave");</code>
+     * Defina os valores a ser passado: <code>nome_da_variavel.atributo(variavel_chave);</code>
+     *
+     * @Author Sandro Diego Adão
+     */
+
     private TextView tv_titulo, tv_descricao, tv_categoria, tv_min_valor, tv_max_valor;
     private ImageView img_grande, img_pequena_1, img_pequena_2, img_pequena_3, img_pequena_4, img_pequena_5, fav_icon;
 
@@ -20,6 +34,7 @@ public class DetalhesJogos extends AppCompatActivity {
         // Deixa a Action Bar invisível
         getSupportActionBar().hide();
 
+        // Definições de variáveis
         tv_titulo = findViewById(R.id.tv_titulo);
         tv_min_valor = findViewById(R.id.tv_min_valor);
         tv_max_valor = findViewById(R.id.tv_max_valor);
@@ -31,7 +46,7 @@ public class DetalhesJogos extends AppCompatActivity {
         img_pequena_5 = findViewById(R.id.img_pequena_5);
         fav_icon = findViewById(R.id.fav_icon);
 
-        // getExtras recebe os valores que foram passados no putExtras da Activity ListaJogos
+        // Variáveis Chaves
         Intent intent = getIntent();
         String titulo = intent.getExtras().getString("Titulo");
         int minVal = intent.getExtras().getInt("MinValor");
@@ -44,7 +59,7 @@ public class DetalhesJogos extends AppCompatActivity {
         int ip5 = intent.getExtras().getInt("ImagemPequena5TDJ");
         int ficon = intent.getExtras().getInt("JogoFavorito");
 
-        // Passando valores para as views
+        // Atribuição de valores
         tv_titulo.setText(titulo);
         tv_min_valor.setText("Min     R$ " + minVal);
         tv_max_valor.setText("Max     R$ " + maxVal);
@@ -57,6 +72,15 @@ public class DetalhesJogos extends AppCompatActivity {
         fav_icon.setImageResource(ficon);
     }
 
+    /**
+     * Métodos da action onClick()
+     * <p>
+     * Métodos utilizados na action onClick() das views, utilizado para alternar entre as imagen na tela Detalhes Jogos
+     *
+     * @param view Define a view que receberá a action
+     * @Author Sandro Diego Adão
+     * @void
+     */
     public void alteraImagem1(View view) {
         Intent intent = getIntent();
         img_grande = findViewById(R.id.img_grande);

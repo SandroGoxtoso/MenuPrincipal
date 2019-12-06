@@ -6,6 +6,15 @@ public class DestaqueJogos {
     private String titulo;
     private String descricao;
 
+    /**
+     * Classe que exibe jogos na tela de destaque na Tela Principal
+     *
+     * @param imagem    Define a imagem do jogo a ser exibido na tela de destaque
+     * @param titulo    Define o titulo do jogo a ser exibido na tela de destaque
+     * @param descricao Define a descrição do jogo a ser exibido na tela de destaque
+     * @author Sandro Diego Adão
+     */
+
     public DestaqueJogos(int imagem, String titulo, String descricao) {
         this.imagem = imagem;
         this.titulo = titulo;

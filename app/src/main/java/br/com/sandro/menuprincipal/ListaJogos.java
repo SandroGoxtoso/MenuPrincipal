@@ -19,7 +19,15 @@ public class ListaJogos extends RecyclerView.Adapter<ListaJogos.MyViewHolder> {
     private Context context;
     private List<Jogos> listaJogos;
 
-
+    /**
+     * Classe para listar novos jogos
+     * <p>
+     * Este método utiliza uma lista do tipo Jogos para inflar a view com as informações dos jogos
+     *
+     * @param context    Define o contexto
+     * @param listaJogos Defina uma lista do tipo Jogos
+     * @Author Sandro Diego Adão
+     */
     public ListaJogos(Context context, List<Jogos> listaJogos) {
         this.context = context;
         this.listaJogos = listaJogos;
@@ -32,6 +40,22 @@ public class ListaJogos extends RecyclerView.Adapter<ListaJogos.MyViewHolder> {
         view = mInflater.inflate(R.layout.lista_jogos, parent, false);
         return new MyViewHolder(view);
     }
+
+    /**
+     * Método abstrato da classe asbtrata MyViewHolder
+     * <p>
+     * Utiliza-se esse método para exibir um jogo novo lista, para informar um jogo a ser exibido
+     * utilize os métodos abaixo:
+     * <p>
+     * Insira no método OnBindViewHolder <code>holder.nome_da_variavel.atributo(listaJogos.get(position).getNomeDaVariavel());</code>
+     * Insira no método onClick <code>intent.putExtra("Nome_Da_Chave", listaJogos.get(position).getNomeDaVariavel());</code>
+     * Insira no método MyViewHolder<code>nome_variavel = itemView.findViewById(R.id.id_view);</code>
+     *
+     * @param holder   Descreve uma exibição de item e metadados sobre seu local no RecyclerView
+     * @param position posição dos elementos
+     * @void
+     * @Author Sandro Diego Adão
+     */
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
