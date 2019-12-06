@@ -2,6 +2,7 @@ package br.com.sandro.menuprincipal;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,8 +20,9 @@ public class DetalhesJogos extends AppCompatActivity {
         // Deixa a Action Bar invisível
         getSupportActionBar().hide();
 
+        tv_titulo = findViewById(R.id.tv_titulo);
         img_grande = findViewById(R.id.img_grande);
-        img_pequena_1 = findViewById(R.id.img_pequena);
+        img_pequena_1 = findViewById(R.id.img_pequena_1);
         img_pequena_2 = findViewById(R.id.img_pequena_2);
         img_pequena_3 = findViewById(R.id.img_pequena_3);
         img_pequena_4 = findViewById(R.id.img_pequena_4);
@@ -28,6 +30,7 @@ public class DetalhesJogos extends AppCompatActivity {
 
         // getExtras recebe os valores que foram passados no putExtras da Activity ListaJogos
         Intent intent = getIntent();
+        String titulo = intent.getExtras().getString("Titulo");
         int ig = intent.getExtras().getInt("ImagemGrandeTDJ");
         int ip1 = intent.getExtras().getInt("ImagemPequena1TDJ");
         int ip2 = intent.getExtras().getInt("ImagemPequena2TDJ");
@@ -36,6 +39,7 @@ public class DetalhesJogos extends AppCompatActivity {
         int ip5 = intent.getExtras().getInt("ImagemPequena5TDJ");
 
         // Passando valores para as views
+        tv_titulo.setText(titulo);
         img_grande.setImageResource(ig);
         img_pequena_1.setImageResource(ip1);
         img_pequena_2.setImageResource(ip2);
@@ -43,4 +47,45 @@ public class DetalhesJogos extends AppCompatActivity {
         img_pequena_4.setImageResource(ip4);
         img_pequena_5.setImageResource(ip5);
     }
+
+    public void alteraImagem1(View view) {
+        Intent intent = getIntent();
+        img_grande = findViewById(R.id.img_grande);
+        img_pequena_1 = findViewById(R.id.img_pequena_1);
+        int ip1 = intent.getExtras().getInt("ImagemPequena1TDJ");
+        img_grande.setImageResource(ip1);
+    }
+
+    public void alteraImagem2(View view) {
+        Intent intent = getIntent();
+        img_grande = findViewById(R.id.img_grande);
+        img_pequena_1 = findViewById(R.id.img_pequena_1);
+        int ip1 = intent.getExtras().getInt("ImagemPequena2TDJ");
+        img_grande.setImageResource(ip1);
+    }
+
+    public void alteraImagem3(View view) {
+        Intent intent = getIntent();
+        img_grande = findViewById(R.id.img_grande);
+        img_pequena_1 = findViewById(R.id.img_pequena_1);
+        int ip1 = intent.getExtras().getInt("ImagemPequena3TDJ");
+        img_grande.setImageResource(ip1);
+    }
+
+    public void alteraImagem4(View view) {
+        Intent intent = getIntent();
+        img_grande = findViewById(R.id.img_grande);
+        img_pequena_1 = findViewById(R.id.img_pequena_1);
+        int ip1 = intent.getExtras().getInt("ImagemPequena4TDJ");
+        img_grande.setImageResource(ip1);
+    }
+
+    public void alteraImagem5(View view) {
+        Intent intent = getIntent();
+        img_grande = findViewById(R.id.img_grande);
+        img_pequena_1 = findViewById(R.id.img_pequena_1);
+        int ip1 = intent.getExtras().getInt("ImagemPequena5TDJ");
+        img_grande.setImageResource(ip1);
+    }
+
 }
