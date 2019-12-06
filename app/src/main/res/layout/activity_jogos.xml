@@ -6,12 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
+    android:background="#F7F7F7"
     tools:context="br.com.sandro.menuprincipal.DetalhesJogos">
 
     <TextView
         android:id="@+id/tv_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#F7F7F7"
         android:paddingLeft="46dp"
         android:text="Fallout IV - Standart Edition"
         android:textSize="17dp"
@@ -25,6 +27,7 @@
         android:id="@+id/linearLayout4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#F7F7F7"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,6 +39,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#F7F7F7"
             android:orientation="vertical">
 
             <ImageView
@@ -86,6 +90,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#F7F7F7"
             android:orientation="vertical">
 
             <TextView
@@ -110,6 +115,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#F7F7F7"
             android:orientation="vertical">
 
             <TextView

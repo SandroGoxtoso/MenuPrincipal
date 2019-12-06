@@ -14,9 +14,12 @@ import java.util.List;
 public class TelaPrincipal extends AppCompatActivity {
 
     List<Jogos> listaJogos;
-    List<Model> models;
-    ViewPager viewPager;
-    Adapter adapter;
+    List<DestaqueJogos> destaqueJogos;
+    List<Generos> generos;
+    ViewPager vp_destaque_jogos;
+    ViewPager vp_generos;
+    DestaqueJogosAdapter destaqueJogosAdapter;
+    GenerosAdapter generosAdapter;
     Integer[] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
 
@@ -26,18 +29,36 @@ public class TelaPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
-        models = new ArrayList<>();
-        models.add(new Model(R.mipmap.modern_warfare_logo_foreground, "Call of Duty - Modern Warfare", "Call of Duty: Modern Warfare é um jogo eletrônico de tiro em primeira pessoa prod..."));
-        models.add(new Model(R.mipmap.farcry5_logo_foreground, "Far Cry 5", "Far Cry 5 é um jogo eletrônico de tiro em primeira pessoa de ação-aventura ambien..."));
-        models.add(new Model(R.mipmap.battlefield5_logo_foreground, "Battlefield V", "Battlefield V é um jogo eletrônico de tiro em primeira pessoa, desenvolvido pela Crite..."));
-        models.add(new Model(R.mipmap.reddead_logo_foreground, "Red Dead Redemption II", "Red Dead Redemption 2 é um jogo eletrônico de ação-aventura desenvolvido e publicado pela..."));
+        generos = new ArrayList<>();
+        generos.add(new Generos("RPG"));
+        generos.add(new Generos("Ação"));
+        generos.add(new Generos("Aventura"));
+        generos.add(new Generos("Estratégia"));
+        generos.add(new Generos("Horror"));
+        generos.add(new Generos("FPS"));
+        generos.add(new Generos("TPS"));
+        generos.add(new Generos("2D"));
+        generos.add(new Generos("3D"));
+        generos.add(new Generos("Virtual"));
+        generos.add(new Generos("Plataforma"));
+        generos.add(new Generos("MMORPG"));
+
+        generosAdapter = new GenerosAdapter(generos, this);
+        vp_generos = findViewById(R.id.vp_generos);
+        vp_generos.setAdapter(generosAdapter);
+
+        destaqueJogos = new ArrayList<>();
+        destaqueJogos.add(new DestaqueJogos(R.mipmap.modern_warfare_logo_foreground, "Call of Duty - Modern Warfare", "Call of Duty: Modern Warfare é um jogo eletrônico de tiro em primeira pessoa prod..."));
+        destaqueJogos.add(new DestaqueJogos(R.mipmap.farcry5_logo_foreground, "Far Cry 5", "Far Cry 5 é um jogo eletrônico de tiro em primeira pessoa de ação-aventura ambien..."));
+        destaqueJogos.add(new DestaqueJogos(R.mipmap.battlefield5_logo_foreground, "Battlefield V", "Battlefield V é um jogo eletrônico de tiro em primeira pessoa, desenvolvido pela Crite..."));
+        destaqueJogos.add(new DestaqueJogos(R.mipmap.reddead_logo_foreground, "Red Dead Redemption II", "Red Dead Redemption 2 é um jogo eletrônico de ação-aventura desenvolvido e publicado pela..."));
 
 
-        adapter = new Adapter(models, this);
+        destaqueJogosAdapter = new DestaqueJogosAdapter(destaqueJogos, this);
 
-        viewPager = findViewById(R.id.viewPager);
-        viewPager.setAdapter(adapter);
-        viewPager.setPadding(130, 0, 130, 0);
+        vp_destaque_jogos = findViewById(R.id.vp_destaque_jogos);
+        vp_destaque_jogos.setAdapter(destaqueJogosAdapter);
+        vp_destaque_jogos.setPadding(130, 0, 130, 0);
 
         Integer[] colors_temp = {
                 /*
@@ -51,12 +72,11 @@ public class TelaPrincipal extends AppCompatActivity {
 
         colors = colors_temp;
 
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        vp_destaque_jogos.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-                if (position < (adapter.getCount() - 1) && position < (colors.length - 1)) {
-                    viewPager.setBackgroundColor(
+                if (position < (destaqueJogosAdapter.getCount() - 1) && position < (colors.length - 1)) {
+                    vp_destaque_jogos.setBackgroundColor(
                             (Integer) argbEvaluator.evaluate(
                                     positionOffset,
                                     colors[position],
@@ -64,7 +84,7 @@ public class TelaPrincipal extends AppCompatActivity {
                             )
                     );
                 } else {
-                    viewPager.setBackgroundColor(colors[colors.length - 1]);
+                    vp_destaque_jogos.setBackgroundColor(colors[colors.length - 1]);
                 }
             }
 
@@ -88,14 +108,14 @@ public class TelaPrincipal extends AppCompatActivity {
         listaJogos.add(new Jogos("The last of us", "Jogos", "", "• Ação  • Aventura  • Sobrevivência", "Konami", R.mipmap.tlou_logo, R.mipmap.tlou_logo, 3, 120, 140, R.mipmap.nao_favorito_icon_foreground, R.mipmap.tlou_logo, R.mipmap.tlou_1_wallpaper, R.mipmap.tlou_2_wallpaper, R.mipmap.tlou_3_wallpaper, R.mipmap.tlou_4_wallpaper, R.mipmap.tlou_logo));
         listaJogos.add(new Jogos("Far Cry 5", "Jogos", "", "• FPS  • Ação", "Ubisoft", R.mipmap.farcry5_logo, R.mipmap.farcry5_logo, 5, 150, 300, R.mipmap.favorito_icon_foreground, R.mipmap.farcry5_logo, R.mipmap.farcry5_1_wallpaper, R.mipmap.farcry5_2_wallpaper, R.mipmap.farcry5_3_wallpaper, R.mipmap.farcry5_4_wallpaper, R.mipmap.farcry5_logo));
 
-        RecyclerView mrcv = findViewById(R.id.rcv_principal);
+        RecyclerView mrcv_lista_jogos = findViewById(R.id.rcv_principal);
         ListaJogos myAdapter = new ListaJogos(this, listaJogos);
 
         /*
          * spanCount Define a quantidade de cards que irá aparecer na horizontal
          * */
-        mrcv.setLayoutManager(new GridLayoutManager(this, 1));
-        mrcv.setAdapter(myAdapter);
+        mrcv_lista_jogos.setLayoutManager(new GridLayoutManager(this, 1));
+        mrcv_lista_jogos.setAdapter(myAdapter);
 
 
     }

@@ -4,27 +4,27 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Button;
+
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import java.util.List;
 
-public class Adapter extends PagerAdapter {
+public class GenerosAdapter extends PagerAdapter {
 
-    private List<Model> models;
+    private List<Generos> generos;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public Adapter(List<Model> models, Context context) {
-        this.models = models;
+    public GenerosAdapter(List<Generos> generos, Context context) {
+        this.generos = generos;
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return models.size();
+        return generos.size();
     }
 
     @Override
@@ -36,18 +36,11 @@ public class Adapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, final int position) {
         layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.item, container, false);
+        View view = layoutInflater.inflate(R.layout.generos_swipe, container, false);
 
-        ImageView imagem_jogo;
-        TextView titulo, descricao;
-
-        imagem_jogo = view.findViewById(R.id.imagem_jogo);
-        titulo = view.findViewById(R.id.titulo);
-        descricao = view.findViewById(R.id.descricao);
-
-        imagem_jogo.setImageResource(models.get(position).getImage());
-        titulo.setText(models.get(position).getTitle());
-        descricao.setText(models.get(position).getDesc());
+        Button generos;
+        generos = view.findViewById(R.id.btn_generos);
+        generos.setText(this.generos.get(position).getGenero());
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override

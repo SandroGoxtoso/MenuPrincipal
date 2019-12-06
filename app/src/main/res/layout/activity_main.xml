@@ -62,7 +62,7 @@
             tools:context="com.demotxt.myapp.menuPrincipal.com.demotxt.menuPrincipal.menuPrincipal.MainActivity">
 
             <androidx.viewpager.widget.ViewPager
-                android:id="@+id/viewPager"
+                android:id="@+id/vp_destaque_jogos"
                 android:layout_width="378dp"
                 android:layout_height="274dp"
                 android:layout_centerInParent="true"
@@ -72,86 +72,16 @@
 
         </RelativeLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
+        <RelativeLayout
+            android:id="@+id/LinearLayout4"
             android:layout_width="wrap_content"
-            android:layout_height="37dp"
-            android:orientation="horizontal">
+            android:layout_height="37dp">
 
-            <Button
-                android:id="@+id/button7"
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_generos"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_items"
-                android:text="Todos"
-                android:textSize="11dp" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="     " />
-
-            <Button
-                android:id="@+id/button8"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_items"
-                android:text="RPG"
-                android:textSize="11dp" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="     " />
-
-            <Button
-                android:id="@+id/button9"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_items"
-                android:text="FPS"
-                android:textSize="11dp" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="     " />
-
-            <Button
-                android:id="@+id/button10"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_items"
-                android:text="Arcade"
-                android:textSize="11dp" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="     " />
-
-            <Button
-                android:id="@+id/button11"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_items"
-                android:text="Aventura"
-                android:textSize="11dp" />
-
-        </LinearLayout>
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_principal"
