@@ -7,7 +7,7 @@
     android:background="#F7F7F7"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context="br.com.sandro.menuprincipal.TelaPrincipal">
+    tools:context="br.com.sandro.menuprincipal.PrincipalActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout2"

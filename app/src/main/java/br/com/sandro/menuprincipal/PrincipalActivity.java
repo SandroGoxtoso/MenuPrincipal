@@ -11,7 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TelaPrincipal extends AppCompatActivity {
+public class PrincipalActivity extends AppCompatActivity {
 
     /**
      * Classe tela principal aonde será exibida todas as informações dos jogos
