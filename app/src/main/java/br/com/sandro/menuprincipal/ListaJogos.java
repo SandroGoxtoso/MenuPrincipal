@@ -71,7 +71,7 @@ public class ListaJogos extends RecyclerView.Adapter<ListaJogos.MyViewHolder> {
         holder.card_jogos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, DetalhesJogos.class);
+                Intent intent = new Intent(context, DetalhesJogosActivity.class);
                 // Passando dados para a activity "Jogos Activity"
                 // Passa os valores no intent.putExtra
 

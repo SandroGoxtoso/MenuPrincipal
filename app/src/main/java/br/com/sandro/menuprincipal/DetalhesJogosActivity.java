@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class DetalhesJogos extends AppCompatActivity {
+public class DetalhesJogosActivity extends AppCompatActivity {
 
     /**
      * Classe aonde contem as informações dos jogos
